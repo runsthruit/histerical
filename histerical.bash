@@ -2,11 +2,11 @@
 
 function ___tmp () {
 
-    shopt -u cmdhist
-    shopt -s histappend
-    shopt -u lithist
+    #shopt -u cmdhist
+    #shopt -s histappend
+    #shopt -u lithist
 
-    HISTFILE="${XDG_DATA_HOME}/bash/_history.d/${HOSTNAME}/${USER}/$( date "+%Y-%m-%d/%H-%M-%S" ).$$.bash_history"
+    HISTFILE="${HOME}/.bash/_history.d/${HOSTNAME}/${USER}/$( date "+%Y-%m-%d/%H-%M-%S" ).$$.bash_history"
 
     mkdir -p "${HISTFILE%/*}"
 
@@ -54,7 +54,7 @@ function hists ()
     grep_args=( "${@:-.}" )
 
     find \
-            "${XDG_DATA_HOME}/bash/_history.d/." \
+            "${HOME}/.bash/_history.d/." \
             -name "*.bash_history" \
             -type f \
             -mtime "-${days}" \
